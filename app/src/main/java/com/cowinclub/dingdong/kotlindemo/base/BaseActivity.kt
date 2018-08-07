@@ -4,29 +4,33 @@ import android.app.Activity
 import android.arch.lifecycle.Lifecycle
 import android.arch.lifecycle.LifecycleOwner
 import android.arch.lifecycle.LifecycleRegistry
+import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 
 
-
-abstract class BaseActivity : AppCompatActivity(),LifecycleOwner {
-    protected lateinit var  mLifecycleRegistry: LifecycleRegistry
+abstract class BaseActivity : AppCompatActivity(), LifecycleOwner {
+    protected lateinit var mLifecycleRegistry: LifecycleRegistry
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mLifecycleRegistry = LifecycleRegistry(this)
         mLifecycleRegistry.markState(Lifecycle.State.CREATED)
         setContentView(getLayoutId())
+        initView()
     }
 
     /*返回布局ID*/
     abstract fun getLayoutId(): Int
 
-    fun registLifecycleObserver(lifeCycleObserver:BaseLifeCycleObserver){
+    /*绑定空间*/
+    abstract fun initView()
+
+    /*添加lifeCycleObserver*/
+    fun registLifecycleObserver(lifeCycleObserver: BaseLifeCycleObserver) {
         mLifecycleRegistry.addObserver(lifeCycleObserver)
     }
-
 
 
     fun <V : View> bindView(id: Int): Lazy<V> = lazy {

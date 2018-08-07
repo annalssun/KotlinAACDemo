@@ -1,7 +1,3 @@
 package com.cowinclub.dingdong.kotlindemo.data
 
-data class Student(var age:Int) {
-
-
-
-}
+data class Student(var age:Int,var name:String )

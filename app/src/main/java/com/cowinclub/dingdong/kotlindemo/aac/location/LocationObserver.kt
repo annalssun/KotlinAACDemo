@@ -1,4 +1,4 @@
-package com.cowinclub.dingdong.kotlindemo
+package com.cowinclub.dingdong.kotlindemo.aac.location
 
 import android.arch.lifecycle.Lifecycle
 import android.arch.lifecycle.OnLifecycleEvent

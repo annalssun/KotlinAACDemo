@@ -1,0 +1,3 @@
+package com.cowinclub.dingdong.kotlindemo.annotation
+
+class PermissionProcessor

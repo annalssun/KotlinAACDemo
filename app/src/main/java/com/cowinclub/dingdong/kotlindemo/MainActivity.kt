@@ -1,10 +1,9 @@
 package com.cowinclub.dingdong.kotlindemo
 
-import android.content.Context
 import android.widget.TextView
+import com.cowinclub.dingdong.kotlindemo.aac.location.LocationObserver
 import com.cowinclub.dingdong.kotlindemo.base.BaseActivity
 import com.cowinclub.dingdong.kotlindemo.data.Student
-import com.cowinclub.dingdong.kotlindemo.aac.location.LocationObserver
 
 class MainActivity : BaseActivity() {
 
@@ -23,6 +22,7 @@ class MainActivity : BaseActivity() {
         var student = Student(123456,"Tom")
 
         GsonFactory.jsonFromString<Student>("")
+
     }
 
 }
